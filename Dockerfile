@@ -12,6 +12,6 @@ RUN \
 
 FROM nginx:alpine AS prod
 WORKDIR /usr/share/nginx/html
-COPY --from=builder /app/build .
+COPY --from=builder /app/dist .
 EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
